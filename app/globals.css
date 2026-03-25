@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-primary: #00daf3;
+  --color-neon-pink: #ff007f;
+  --color-neon-green: #39ff14;
+  --color-surface: #10131a;
+  --color-surface-dark: #050b14;
+  --color-surface-bright: #363940;
+  --color-surface-container: #1d2026;
+  --color-surface-container-low: #191c22;
+  --color-surface-container-lowest: #0b0e14;
+  --color-surface-container-high: #272a31;
+  --color-surface-container-highest: #32353c;
+  --color-on-surface: #e1e2eb;
+  --color-on-surface-variant: #c4c6cc;
+  --color-outline-variant: #44474c;
+  --color-background: #10131a;
+  --color-error: #ffb4ab;
+  --color-on-primary: #00363d;
+  --color-on-primary-container: #0090a1;
+  --color-primary-fixed: #9cf0ff;
+  
+  --font-headline: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-label: var(--font-inter);
+  --font-mono: var(--font-fira-code);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+}
+
+.terminal-grid {
+  background-image: radial-gradient(circle, #44474c 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.05;
+}
+
+.terminal-grid-lines {
+  background-image: 
+      linear-gradient(to right, rgba(68, 71, 76, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(68, 71, 76, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.terminal-window {
+  @apply border border-[#1e293b] bg-[#0a1220]/90 backdrop-blur-md rounded-lg overflow-hidden shadow-2xl;
+}
+
+.terminal-header {
+  @apply bg-[#1e293b] px-4 py-2 flex items-center justify-between border-b border-[#334155];
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 218, 243, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.terminal-glow {
+  box-shadow: 0 0 20px rgba(0, 218, 243, 0.15);
+}
+
+@keyframes scan {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
