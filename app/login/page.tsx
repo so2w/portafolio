@@ -1,5 +1,6 @@
 import { login, signup } from './actions'
 import { Terminal } from 'lucide-react'
+import SecretGate from '../../components/SecretGate'
 
 export default function LoginPage({
   searchParams,
@@ -10,8 +11,9 @@ export default function LoginPage({
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6 relative overflow-hidden">
       <div className="absolute inset-0 terminal-grid opacity-30 pointer-events-none"></div>
 
-      <div className="w-full max-w-md bg-surface-container border border-outline-variant/30 rounded-lg p-8 relative z-10 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-        <div className="flex justify-center mb-8 text-primary">
+      <SecretGate>
+        <div className="w-full max-w-md bg-surface-container border border-outline-variant/30 rounded-lg p-8 relative z-10 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+          <div className="flex justify-center mb-8 text-primary">
           <Terminal className="w-12 h-12" />
         </div>
         <h1 className="text-2xl font-headline font-bold text-center text-on-surface mb-8">./system_auth.sh</h1>
@@ -61,6 +63,7 @@ export default function LoginPage({
           </div>
         </form>
       </div>
+      </SecretGate>
     </div>
   )
 }

@@ -21,14 +21,11 @@ export default async function PortfolioPage() {
             <span className="font-headline font-bold tracking-tight">SINTAXIS QUANTUM</span>
           </div>
           <div className="hidden md:flex items-center gap-6 font-mono text-sm">
+            <a href="#" className="text-on-surface-variant hover:text-primary transition-colors font-bold">./inicio</a>
             <a href="#whoami" className="text-on-surface-variant hover:text-primary transition-colors">./whoami</a>
             <a href="#experience" className="text-on-surface-variant hover:text-primary transition-colors">./experience</a>
             <a href="#skills" className="text-on-surface-variant hover:text-primary transition-colors">./skills</a>
             <a href="#projects" className="text-on-surface-variant hover:text-primary transition-colors">./projects</a>
-            <Link href="/login" className="text-primary border border-primary/50 px-3 py-1 rounded hover:bg-primary/10 transition-colors flex items-center gap-2">
-              <Lock className="w-4 h-4" />
-              <span>Login</span>
-            </Link>
           </div>
         </div>
       </nav>
@@ -200,7 +197,7 @@ export default async function PortfolioPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects && projects.length > 0 ? projects.map((project: any) => (
-              <div key={project.id} className="bg-surface-container border border-outline-variant/50 rounded-lg overflow-hidden group flex flex-col">
+              <div key={project.id} className="bg-surface-container border border-outline-variant/50 rounded-lg overflow-hidden group flex flex-col hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
                 <div className="h-48 bg-surface-bright relative overflow-hidden shrink-0">
                   {project.image_url ? (
                     <Image 
